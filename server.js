@@ -5,7 +5,7 @@ const port = 3000;
 
 app.use(express.json());
 
-// Dados temporários (pode ser substituído por um banco de dados)
+// Dados temporários
 const clientes = [];
 const instrutores = [];
 const treinos = [];
@@ -25,7 +25,7 @@ app.post('/api/clientes', (req, res) => {
     const cliente = {
         id: clientes.length + 1,
         nome: req.body.nome,
-        // Adicione outras propriedades conforme necessário
+
     };
     clientes.push(cliente);
     res.json(cliente);
@@ -36,7 +36,7 @@ app.put('/api/clientes/:id', (req, res) => {
     if (!cliente) return res.status(404).send('Cliente não encontrado.');
 
     cliente.nome = req.body.nome;
-    // Atualize outras propriedades conforme necessário
+    
 
     res.json(cliente);
 });
@@ -64,7 +64,7 @@ app.post('/api/instrutores', (req, res) => {
     const instrutor = {
         id: instrutores.length + 1,
         nome: req.body.nome,
-        // Adicione outras propriedades conforme necessário
+        
     };
     instrutores.push(instrutor);
     res.json(instrutor);
@@ -75,7 +75,7 @@ app.put('/api/instrutores/:id', (req, res) => {
     if (!instrutor) return res.status(404).send('Instrutor não encontrado.');
 
     instrutor.nome = req.body.nome;
-    // Atualize outras propriedades conforme necessário
+    
 
     res.json(instrutor);
 });
@@ -103,7 +103,7 @@ app.post('/api/treinos', (req, res) => {
     const treino = {
         id: treinos.length + 1,
         nome: req.body.nome,
-        // Adicione outras propriedades conforme necessário
+        
     };
     treinos.push(treino);
     res.json(treino);
@@ -114,7 +114,7 @@ app.put('/api/treinos/:id', (req, res) => {
     if (!treino) return res.status(404).send('Treino não encontrado.');
 
     treino.nome = req.body.nome;
-    // Atualize outras propriedades conforme necessário
+   
 
     res.json(treino);
 });
